@@ -225,7 +225,7 @@ def main():
     rota = organ["rotas"][rota_index]
     caminho = rota["Trajeto"]
 
-    st.subheader(f"Trajeto de drenagem do {rota['Rota']}")
+    st.subheader(f"Trajeto de drenagem - {rota['Rota']}")
 
     # Cria abas para cada etapa da rota de drenagem
     abas = st.tabs([f"Etapa {i+1}: {etapa}" for i, etapa in enumerate(caminho)])
