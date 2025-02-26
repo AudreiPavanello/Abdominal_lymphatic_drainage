@@ -4,10 +4,10 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 def main():
-    st.title("Visualização da Drenagem Linfática Abdominal – Versão Detalhada")
+    st.title("Visualização da Drenagem Linfática Abdominal")
     st.write(
         "Selecione um órgão para visualizar as rotas de drenagem linfática. Caso o órgão apresente múltiplas rotas, "
-        "escolha a desejada para ver cada etapa do percurso em abas."
+        "escolha a desejada para ver cada etapa do trajeto."
     )
 
     # Dados dos órgãos e rotas de drenagem
