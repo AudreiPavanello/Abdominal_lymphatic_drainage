@@ -191,6 +191,19 @@ def main():
             "nome": "Intestino Grosso",
             "rotas": [
                 {
+                    "Rota": "Ceco e parte terminal do íleo",
+                    "Trajeto": [
+                        "Linfonodos epicólicos",
+                        "Linfonodos paracólicos",
+                        "Linfonodos ileocólicos",
+                        "Linfonodos mesentéricos superiores",
+                        "Tronco intestinal",
+                        "Cisterna do quilo",
+                        "Ducto torácico",
+                        "Ângulo venoso esquerdo"
+                    ]
+                },
+                {
                     "Rota": "Colo Ascendente",
                     "Trajeto": [
                         "Linfonodos epicólicos",
@@ -223,6 +236,7 @@ def main():
                         "Linfonodos paracólicos",
                         "Linfonodos colicos esquerdos",
                         "Linfonodos mesentéricos inferiores",
+                        "Linfonodos lombares esquerdos",
                         "Tronco lombar esquerdo",
                         "Cisterna do quilo",
                         "Ducto torácico",
