@@ -62,12 +62,12 @@ def main():
             ]
         },
         "figado": {
-            "nome": "Fígado",
+            "nome": "Fígado e Vesícula Biliar",
             "rotas": [
                 {
-                    "Rota": "Drenagem Hepática descendente (maior parte da linfa)",
+                    "Rota": "Drenagem Hepática descendente | Vesícula Biliar | Ducto colédoco (maior parte da linfa)",
                     "Trajeto": [
-                        "Linfonodos hepáticos",
+                        "Linfonodos hepáticos/linfonodos císticos",
                         "Linfonodos celíacos",
                         "Tronco intestinal",
                         "Cisterna do quilo",
@@ -103,11 +103,40 @@ def main():
                 }
             ]
         },
-        "rins": {
-            "nome": "Rins",
+        "pâncreas": {
+            "nome": "Pâncreas",
             "rotas": [
                 {
-                    "Rota": "Drenagem Renal",
+                    "Rota": "Cabeça do pâncreas",
+                    "Trajeto": [
+                        "Linfonodos pancreáticoduodenais",
+                        "Linfonodos celíacos (face anterior) | Linfonodos mesentéricos superiores (face posterior)",
+                        "Tronco intestinal",
+                        "Cisterna do quilo",
+                        "Ducto torácico",
+                        "Ângulo venoso esquerdo"
+                    ]
+                },
+                {
+                    "Rota": "Corpo e cauda do pâncreas",
+                    "Trajeto": [
+                        "Linfonodos pancreaticoesplênicos (pancreáticos superiores/inferiores)",
+                        "Linfonodos celíacos | Linfonodos mesentéricos superiores",
+                        "Tronco intestinal",
+                        "Cisterna do quilo",
+                        "Ducto torácico",
+                        "Ângulo venoso esquerdo"
+                    ]
+                }
+            ]
+            
+        },
+
+        "rins": {
+            "nome": "Rins, glândulas suprarrenais, ureteres",
+            "rotas": [
+                {
+                    "Rota": "Drenagem rins, glândulas suprarrenais, ureteres",
                     "Trajeto": [
                         "Linfonodos lombares (direitos e esquerdos)",
                         "Troncos lombares (esquerdo e direito)",
