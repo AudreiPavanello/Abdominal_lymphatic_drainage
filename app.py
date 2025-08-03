@@ -40,9 +40,9 @@ def render_study_mode(organs):
     st.subheader(f"Rota de Drenagem: {rota['Rota']}")
     st.markdown("---")
 
-    col1, col2 = st.columns([1, 1])
-
-    with col1:
+    # Centraliza o gráfico usando colunas para controlar o tamanho e dar um respiro nas laterais
+    col1, col2, col3 = st.columns([0.5, 2, 0.5])
+    with col2:
         st.markdown("#### Fluxograma da Drenagem")
         # Cria um novo gráfico direcionado (Digraph)
         graph = graphviz.Digraph()
@@ -56,19 +56,8 @@ def render_study_mode(organs):
             if i > 0:
                 graph.edge(str(i - 1), str(i))
 
-        # Renderiza o gráfico no Streamlit
-        st.graphviz_chart(graph)
-
-    with col2:
-        st.markdown("#### Detalhes de Cada Etapa")
-        for i, etapa in enumerate(caminho):
-            with st.expander(f"Etapa {i+1}: {etapa}"):
-                if i == 0:
-                    st.info(f"**Ponto de Partida:** A linfa é coletada e entra nos primeiros linfonodos: **{caminho[i]}**.")
-                elif i < len(caminho) - 1:
-                    st.write(f"A partir de **{caminho[i]}**, a linfa flui para a próxima estrutura no caminho: **{caminho[i+1]}**.")
-                else:
-                    st.success(f"**Destino Final:** A linfa de **{caminho[i]}** entra na circulação sanguínea, completando o trajeto.")
+        # Renderiza o gráfico no Streamlit, usando a largura da coluna
+        st.graphviz_chart(graph, use_container_width=True)
 
 def setup_quick_quiz_question(organs):
     """Seleciona uma pergunta aleatória e prepara as opções."""
