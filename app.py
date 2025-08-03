@@ -1,7 +1,16 @@
 import streamlit as st
+import graphviz
+import json
 
 # Configura o layout para widescreen
 st.set_page_config(layout="wide")
+
+# Usa o cache do Streamlit para carregar os dados apenas uma vez
+@st.cache_data
+def load_data(path: str):
+    """Carrega os dados dos órgãos de um arquivo JSON."""
+    with open(path, 'r', encoding='utf-8') as f:
+        return json.load(f)
 
 def main():
     st.title("Visualização da Drenagem Linfática Abdominal")
@@ -9,243 +18,9 @@ def main():
         "Selecione um órgão para visualizar as rotas de drenagem linfática. Caso o órgão apresente múltiplas rotas, "
         "escolha a desejada para ver cada etapa do trajeto."
     )
-
-    # Dados dos órgãos e rotas de drenagem
-    organs = {
-        "estomago": {
-            "nome": "Estômago",
-            "rotas": [
-                {
-                    "Rota": "Curvatura menor do Estômago",
-                    "Trajeto": [
-                        "Linfonodos gástricos (direitos e esquerdos)",
-                        "Linfonodos celíacos",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                },
-                {
-                    "Rota": "Curvatura maior",
-                    "Trajeto": [
-                        "Linfonodos gastromentais (direitos e esquerdos)",
-                        "Linfonodos celíacos",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                },
-                {
-                    "Rota": "Fundo gástrico",
-                    "Trajeto": [
-                        "Linfonodos pancreaticoesplênicos",
-                        "Linfonodos celíacos",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                },
-                {
-                    "Rota": "Parte Pilórica",
-                    "Trajeto": [
-                        "Linfonodos pilóricos",
-                        "Linfonodos celíacos",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                }
-            ]
-        },
-        "figado": {
-            "nome": "Fígado e Vesícula Biliar",
-            "rotas": [
-                {
-                    "Rota": "Drenagem Hepática descendente | Vesícula Biliar | Ducto colédoco (maior parte da linfa)",
-                    "Trajeto": [
-                        "Linfonodos hepáticos/linfonodos císticos",
-                        "Linfonodos celíacos",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                },
-                {
-                    "Rota": "Drenagem Hepática ascendente (menor parte da linfa)",
-                    "Trajeto": [
-                        "Linfonodos frênicos (superiores e inferiores)",
-                        "Tronco broncomediastinal",
-                        "Ducto torácico ou Ducto linfático direito",
-                        "Ângulo venoso esquerdo ou direito"
-                    ]
-                }
-            ]
-        },
-        "baco": {
-            "nome": "Baço",
-            "rotas": [
-                {
-                    "Rota": "Drenagem Esplênica",
-                    "Trajeto": [
-                        "Linfonodos esplênicos",
-                        "Linfonodos pancreaticoesplênicos",
-                        "Linfonodos celíacos",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                }
-            ]
-        },
-        "pâncreas": {
-            "nome": "Pâncreas",
-            "rotas": [
-                {
-                    "Rota": "Cabeça do pâncreas",
-                    "Trajeto": [
-                        "Linfonodos pancreáticoduodenais",
-                        "Linfonodos celíacos (face anterior) | Linfonodos mesentéricos superiores (face posterior)",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                },
-                {
-                    "Rota": "Corpo e cauda do pâncreas",
-                    "Trajeto": [
-                        "Linfonodos pancreaticoesplênicos (pancreáticos superiores/inferiores)",
-                        "Linfonodos celíacos | Linfonodos mesentéricos superiores",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                }
-            ]
-            
-        },
-
-        "rins": {
-            "nome": "Rins, glândulas suprarrenais, ureteres",
-            "rotas": [
-                {
-                    "Rota": "Drenagem rins, glândulas suprarrenais, ureteres",
-                    "Trajeto": [
-                        "Linfonodos lombares (direitos e esquerdos)",
-                        "Troncos lombares (esquerdo e direito)",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                }
-            ]
-        },
-        "intestino_delgado": {
-            "nome": "Intestino Delgado",
-            "rotas": [
-                {
-                    "Rota": "Duodeno - face anterior",
-                    "Trajeto": [
-                        "Linfonodos pancreatoduodenais",
-                        "Linfonodos celíacos",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                },
-                {
-                    "Rota": "Duodeno - face posterior",
-                    "Trajeto": [
-                        "Linfonodos pancreatoduodenais",
-                        "Linfonodos mesentéricos superiores",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                },
-                {
-                    "Rota": "Jejuno/Íleo",
-                    "Trajeto": [
-                        "Linfonodos justaintestinais",
-                        "Linfonodos mesentéricos",
-                        "Linfonodos centrais superiores",
-                        "Linfonodos mesentéricos superiores",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                }
-            ]
-        },
-        "intestino_grosso": {
-            "nome": "Intestino Grosso",
-            "rotas": [
-                {
-                    "Rota": "Ceco e parte terminal do íleo",
-                    "Trajeto": [
-                        "Linfonodos epicólicos",
-                        "Linfonodos paracólicos",
-                        "Linfonodos ileocólicos",
-                        "Linfonodos mesentéricos superiores",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                },
-                {
-                    "Rota": "Colo Ascendente",
-                    "Trajeto": [
-                        "Linfonodos epicólicos",
-                        "Linfonodos paracólicos",
-                        "Linfonodos colicos direitos",
-                        "Linfonodos mesentéricos superiores",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                },
-                {
-                    "Rota": "Colo Transverso",
-                    "Trajeto": [
-                        "Linfonodos epicólicos",
-                        "Linfonodos paracólicos",
-                        "Linfonodos colicos médios",
-                        "Linfonodos mesentéricos superiores",
-                        "Tronco intestinal",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                },
-                {
-                    "Rota": "Colo Descendente/Colo Sigmoide",
-                    "Trajeto": [
-                        "Linfonodos epicólicos",
-                        "Linfonodos paracólicos",
-                        "Linfonodos colicos esquerdos",
-                        "Linfonodos mesentéricos inferiores",
-                        "Linfonodos lombares esquerdos",
-                        "Tronco lombar esquerdo",
-                        "Cisterna do quilo",
-                        "Ducto torácico",
-                        "Ângulo venoso esquerdo"
-                    ]
-                }
-            ]
-        }
-    }
+    
+    # Carrega os dados do arquivo JSON
+    organs = load_data('data.json')
 
     # Seleção do órgão
     organ_key = st.selectbox(
@@ -268,19 +43,38 @@ def main():
     rota = organ["rotas"][rota_index]
     caminho = rota["Trajeto"]
 
-    st.subheader(f"Trajeto de drenagem - {rota['Rota']}")
+    st.subheader(f"Rota de Drenagem: {rota['Rota']}")
+    st.markdown("---")
 
-    # Cria abas para cada etapa da rota de drenagem
-    abas = st.tabs([f"Etapa {i+1}: {etapa}" for i, etapa in enumerate(caminho)])
-    for i, aba in enumerate(abas):
-        with aba:
-            st.markdown(f"### Etapa {i+1}: {caminho[i]}")
-            if i == 0:
-                st.write(f"Início da drenagem linfática.")
-            elif i < len(caminho) - 1:
-                st.write(f"Drenagem para {caminho[i+1].lower()}.")
-            else:
-                st.write("Etapa final: Chegada a circulação venosa.")
+    col1, col2 = st.columns([1, 1])
+
+    with col1:
+        st.markdown("#### Fluxograma da Drenagem")
+        # Cria um novo gráfico direcionado (Digraph)
+        graph = graphviz.Digraph()
+        graph.attr('node', shape='box', style='rounded,filled', fillcolor='#e6f3ff', color='#0066cc')
+        graph.attr('edge', color='#333333')
+        graph.attr(rankdir='TB', splines='ortho') # Layout de cima para baixo
+
+        # Adiciona os nós (etapas) e as arestas (fluxo)
+        for i, etapa in enumerate(caminho):
+            graph.node(str(i), etapa)
+            if i > 0:
+                graph.edge(str(i - 1), str(i))
+
+        # Renderiza o gráfico no Streamlit
+        st.graphviz_chart(graph)
+
+    with col2:
+        st.markdown("#### Detalhes de Cada Etapa")
+        for i, etapa in enumerate(caminho):
+            with st.expander(f"Etapa {i+1}: {etapa}"):
+                if i == 0:
+                    st.info(f"**Ponto de Partida:** A linfa é coletada e entra nos primeiros linfonodos: **{caminho[i]}**.")
+                elif i < len(caminho) - 1:
+                    st.write(f"A partir de **{caminho[i]}**, a linfa flui para a próxima estrutura no caminho: **{caminho[i+1]}**.")
+                else:
+                    st.success(f"**Destino Final:** A linfa de **{caminho[i]}** entra na circulação sanguínea, completando o trajeto.")
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,233 @@
+{
+    "estomago": {
+        "nome": "Estômago",
+        "rotas": [
+            {
+                "Rota": "Curvatura menor do Estômago",
+                "Trajeto": [
+                    "Linfonodos gástricos (direitos e esquerdos)",
+                    "Linfonodos celíacos",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            },
+            {
+                "Rota": "Curvatura maior",
+                "Trajeto": [
+                    "Linfonodos gastromentais (direitos e esquerdos)",
+                    "Linfonodos celíacos",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            },
+            {
+                "Rota": "Fundo gástrico",
+                "Trajeto": [
+                    "Linfonodos pancreaticoesplênicos",
+                    "Linfonodos celíacos",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            },
+            {
+                "Rota": "Parte Pilórica",
+                "Trajeto": [
+                    "Linfonodos pilóricos",
+                    "Linfonodos celíacos",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            }
+        ]
+    },
+    "figado": {
+        "nome": "Fígado e Vesícula Biliar",
+        "rotas": [
+            {
+                "Rota": "Drenagem Hepática descendente | Vesícula Biliar | Ducto colédoco (maior parte da linfa)",
+                "Trajeto": [
+                    "Linfonodos hepáticos/linfonodos císticos",
+                    "Linfonodos celíacos",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            },
+            {
+                "Rota": "Drenagem Hepática ascendente (menor parte da linfa)",
+                "Trajeto": [
+                    "Linfonodos frênicos (superiores e inferiores)",
+                    "Tronco broncomediastinal",
+                    "Ducto torácico ou Ducto linfático direito",
+                    "Ângulo venoso esquerdo ou direito"
+                ]
+            }
+        ]
+    },
+    "baco": {
+        "nome": "Baço",
+        "rotas": [
+            {
+                "Rota": "Drenagem Esplênica",
+                "Trajeto": [
+                    "Linfonodos esplênicos",
+                    "Linfonodos pancreaticoesplênicos",
+                    "Linfonodos celíacos",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            }
+        ]
+    },
+    "pâncreas": {
+        "nome": "Pâncreas",
+        "rotas": [
+            {
+                "Rota": "Cabeça do pâncreas",
+                "Trajeto": [
+                    "Linfonodos pancreáticoduodenais",
+                    "Linfonodos celíacos (face anterior) | Linfonodos mesentéricos superiores (face posterior)",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            },
+            {
+                "Rota": "Corpo e cauda do pâncreas",
+                "Trajeto": [
+                    "Linfonodos pancreaticoesplênicos (pancreáticos superiores/inferiores)",
+                    "Linfonodos celíacos | Linfonodos mesentéricos superiores",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            }
+        ]
+    },
+    "rins": {
+        "nome": "Rins, glândulas suprarrenais, ureteres",
+        "rotas": [
+            {
+                "Rota": "Drenagem rins, glândulas suprarrenais, ureteres",
+                "Trajeto": [
+                    "Linfonodos lombares (direitos e esquerdos)",
+                    "Troncos lombares (esquerdo e direito)",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            }
+        ]
+    },
+    "intestino_delgado": {
+        "nome": "Intestino Delgado",
+        "rotas": [
+            {
+                "Rota": "Duodeno - face anterior",
+                "Trajeto": [
+                    "Linfonodos pancreatoduodenais",
+                    "Linfonodos celíacos",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            },
+            {
+                "Rota": "Duodeno - face posterior",
+                "Trajeto": [
+                    "Linfonodos pancreatoduodenais",
+                    "Linfonodos mesentéricos superiores",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            },
+            {
+                "Rota": "Jejuno/Íleo",
+                "Trajeto": [
+                    "Linfonodos justaintestinais",
+                    "Linfonodos mesentéricos",
+                    "Linfonodos centrais superiores",
+                    "Linfonodos mesentéricos superiores",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            }
+        ]
+    },
+    "intestino_grosso": {
+        "nome": "Intestino Grosso",
+        "rotas": [
+            {
+                "Rota": "Ceco e parte terminal do íleo",
+                "Trajeto": [
+                    "Linfonodos epicólicos",
+                    "Linfonodos paracólicos",
+                    "Linfonodos ileocólicos",
+                    "Linfonodos mesentéricos superiores",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            },
+            {
+                "Rota": "Colo Ascendente",
+                "Trajeto": [
+                    "Linfonodos epicólicos",
+                    "Linfonodos paracólicos",
+                    "Linfonodos colicos direitos",
+                    "Linfonodos mesentéricos superiores",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            },
+            {
+                "Rota": "Colo Transverso",
+                "Trajeto": [
+                    "Linfonodos epicólicos",
+                    "Linfonodos paracólicos",
+                    "Linfonodos colicos médios",
+                    "Linfonodos mesentéricos superiores",
+                    "Tronco intestinal",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            },
+            {
+                "Rota": "Colo Descendente/Colo Sigmoide",
+                "Trajeto": [
+                    "Linfonodos epicólicos",
+                    "Linfonodos paracólicos",
+                    "Linfonodos colicos esquerdos",
+                    "Linfonodos mesentéricos inferiores",
+                    "Linfonodos lombares esquerdos",
+                    "Tronco lombar esquerdo",
+                    "Cisterna do quilo",
+                    "Ducto torácico",
+                    "Ângulo venoso esquerdo"
+                ]
+            }
+        ]
+    }
+}
