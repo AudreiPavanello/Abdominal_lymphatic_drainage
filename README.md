@@ -1,17 +1,23 @@
-# Abdominal_lymphatic_drainage
-App for the visualization of the abdominal lymphatic drainage
+# Drenagem Linfática Abdominal
 
+## 🎯 Objetivo do Aplicativo
 
-## Objective of the app
+Este aplicativo foi projetado para auxiliar estudantes da área da saúde, especialmente de medicina, a aprender e a visualizar as complexas rotas de drenagem linfática do abdome.
 
-This app was designed to be of help to medical students to learn the abdominal lymphatic drainage.
+O conhecimento dessas rotas é essencial para compreender a disseminação linfática de tumores e para o planejamento cirúrgico oncológico.
 
-It contains the following abdominal organs:
-- Estomach
-- Pancreas
-- Spleen
-- Small intestine
-- Large intestine
-- Liver
+## ✨ Funcionalidades
 
-Each organ can have multiple drainage routes, the knowledge of the routes is essential to understand lymphatic dissemination of cancer.
+O aplicativo é dividido em três modos de uso para diferentes estilos de aprendizado:
+
+### 📚 Modo Estudo
+- **Visualização Interativa:** Selecione um órgão e uma rota de drenagem específica para visualizar um fluxograma completo do trajeto da linfa.
+- **Foco na Aprendizagem Visual:** Ideal para entender o caminho completo, desde os linfonodos regionais até a circulação venosa.
+
+### 🧠 Modo Quiz Rápido
+- **Teste de Conhecimento:** Responda a perguntas de múltipla escolha geradas aleatoriamente sobre as sequências de drenagem.
+- **Feedback Imediato:** Receba a resposta correta instantaneamente para reforçar o aprendizado.
+
+### 🩺 Modo Casos Clínicos
+- **Aplicação Prática:** Resolva pequenos casos clínicos focados em oncologia.
+- **Raciocínio Clínico:** Os casos desafiam o usuário a identificar os principais grupos de linfonodos acometidos em cenários de câncer, conectando a anatomia com a prática médica.
