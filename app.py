@@ -64,11 +64,11 @@ def render_study_mode(organs):
         for i, etapa in enumerate(caminho):
             with st.expander(f"Etapa {i+1}: {etapa}"):
                 if i == 0:
-                    st.info(f"**Ponto de Partida:** A linfa é coletada e entra nos primeiros linfonodos: **{caminho[i]}**.")
+                    st.info(f"**Ponto de Partida:** A linfa é coletada e entra nos **{caminho[i]}**.")
                 elif i < len(caminho) - 1:
-                    st.write(f"A partir de **{caminho[i]}**, a linfa flui para a próxima estrutura no caminho: **{caminho[i+1]}**.")
+                    st.write(f"Após isso, a linfa flui para: **{caminho[i+1]}**.")
                 else:
-                    st.success(f"**Destino Final:** A linfa de **{caminho[i]}** entra na circulação sanguínea, completando o trajeto.")
+                    st.success(f"**Destino Final:** A linfa do **{caminho[i]}** entra na circulação sanguínea, completando o trajeto.")
 
 def setup_quiz_question(organs):
     """Seleciona uma pergunta aleatória e prepara as opções."""
@@ -85,7 +85,7 @@ def setup_quiz_question(organs):
     # Escolhe uma etapa aleatória (exceto a última)
     step_index = random.randint(0, len(caminho) - 2)
     
-    question_prompt = f"A linfa de **{organ['nome']}** (seguindo a rota *{rota['Rota']}*) está em **{caminho[step_index]}**. Para qual estrutura ela flui a seguir?"
+    question_prompt = f"A linfa do **{organ['nome']}** (seguindo a rota *{rota['Rota']}*) está em **{caminho[step_index]}**. Para qual estrutura ela flui a seguir?"
     correct_answer = caminho[step_index + 1]
 
     # Coleta todos os nós possíveis para usar como distratores
