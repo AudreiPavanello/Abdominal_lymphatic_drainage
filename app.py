@@ -85,7 +85,7 @@ def setup_quiz_question(organs):
     # Escolhe uma etapa aleatória (exceto a última)
     step_index = random.randint(0, len(caminho) - 2)
     
-    question_prompt = f"A linfa do **{organ['nome']}** (seguindo a rota *{rota['Rota']}*) está em **{caminho[step_index]}**. Para qual estrutura ela flui a seguir?"
+    question_prompt = f"A linfa do **{organ['nome']}** (Rota do(a) *{rota['Rota']}*) está em **{caminho[step_index]}**. Para qual estrutura ela flui a seguir?"
     correct_answer = caminho[step_index + 1]
 
     # Coleta todos os nós possíveis para usar como distratores
