@@ -1,23 +1,34 @@
-# Drenagem Linfática Abdominal
-
-## 🎯 Objetivo do Aplicativo
-
-Este aplicativo foi projetado para auxiliar estudantes da área da saúde, especialmente de medicina, a aprender e a visualizar as complexas rotas de drenagem linfática do abdome.
-
-O conhecimento dessas rotas é essencial para compreender a disseminação linfática de tumores e para o planejamento cirúrgico oncológico.
-
-## ✨ Funcionalidades
-
-O aplicativo é dividido em três modos de uso para diferentes estilos de aprendizado:
-
-### 📚 Modo Estudo
-- **Visualização Interativa:** Selecione um órgão e uma rota de drenagem específica para visualizar um fluxograma completo do trajeto da linfa.
-- **Foco na Aprendizagem Visual:** Ideal para entender o caminho completo, desde os linfonodos regionais até a circulação venosa.
-
-### 🧠 Modo Quiz Rápido
-- **Teste de Conhecimento:** Responda a perguntas de múltipla escolha geradas aleatoriamente sobre as sequências de drenagem.
-- **Feedback Imediato:** Receba a resposta correta instantaneamente para reforçar o aprendizado.
-
-### 🩺 Modo Casos Clínicos
-- **Aplicação Prática:** Resolva pequenos casos clínicos focados em oncologia.
-- **Raciocínio Clínico:** Os casos desafiam o usuário a identificar os principais grupos de linfonodos acometidos em cenários de câncer, conectando a anatomia com a prática médica.
+ # Abdominal Lymphatic Drainage Study App
+ 
+ This is an interactive Streamlit application designed to help medical students and professionals study and test their knowledge of the abdominal lymphatic drainage system.
+ 
+ The application features three modes:
+ 1.  **Study Mode**: Visualize the complete lymphatic drainage pathways for various abdominal organs.
+ 2.  **Quick Quiz Mode**: Test your knowledge with randomly generated multiple-choice questions about the flow between lymph nodes.
+ 3.  **Clinical Cases Mode**: Apply your anatomical knowledge to solve oncology-based clinical scenarios.
+ 
+ ## How to Cite
+ 
+ If you use this application in your research, teaching, or other work, please cite it as follows:
+ 
+ ### Plain Text
+ 
+ > Pavanello, A. (2024). *Abdominal Lymphatic Drainage Study App* (Version 1.0.0) [Software]. Available from https://github.com/AudreiPavanello/Abdominal_lymphatic_drainage
+ 
+ ### BibTeX Format
+ 
+ For use with LaTeX and other reference managers:
+ 
+ ```bibtex
+ @software{Pavanello_Abdominal_Lymphatic_2024,
+   author = {Pavanello, Audrei},
+   title = {{Abdominal Lymphatic Drainage Study App}},
+   year = {2024},
+   version = {1.0.0},
+   publisher = {GitHub},
+   url = {https://github.com/AudreiPavanello/Abdominal_lymphatic_drainage}
+ }
+ ```
+ 
+ ---
+ 
