@@ -13,7 +13,7 @@
  
  ### Plain Text
  
- > Pavanello, A. (2024). *Abdominal Lymphatic Drainage Study App* (Version 1.0.0) [Software]. Available from https://github.com/AudreiPavanello/Abdominal_lymphatic_drainage
+ > Pavanello, A. (2024). *Abdominal Lymphatic Drainage Study App* (Version 1.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.17096196
  
  ### BibTeX Format
  
@@ -24,9 +24,10 @@
    author = {Pavanello, Audrei},
    title = {{Abdominal Lymphatic Drainage Study App}},
    year = {2024},
-   version = {1.0.0},
-   publisher = {GitHub},
-   url = {https://github.com/AudreiPavanello/Abdominal_lymphatic_drainage}
+   version = {1.0.0},  
+   publisher = {Zenodo},
+   doi = {10.5281/zenodo.17096196},
+   url = {https://doi.org/10.5281/zenodo.17096196}
  }
  ```
  
